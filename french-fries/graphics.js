@@ -13,7 +13,7 @@ function StartGame() {
   document.getElementById("Overlay").style.display = "none";
   if (intervalSet == true) { /*Skip*/ }
   else {
-    interval(Repaint, 500);
+    interval(Repaint, 41);
     setInterval(AddBot, 1000);
     intervalSet = true;
   }
