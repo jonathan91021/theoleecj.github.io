@@ -40,6 +40,7 @@ function StartPaint() {
   InitBots();
   InitKetchup();
   InitLasers();
+  Update();
 }
 
 function Repaint() {
@@ -118,6 +119,7 @@ function InitLasers() {
   
   while (laserToDraw > laserDrawn) {
     var currentLaser = lasers[laserDrawn];
+    canvasContext.fillStyle = "green";
     canvasContext.fillRect(currentLaser.x, currentLaser.y, 5, 20);
     laserDrawn++;
   }
