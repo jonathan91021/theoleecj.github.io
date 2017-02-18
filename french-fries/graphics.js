@@ -95,7 +95,7 @@ function Update() {
       botsChecked++;
     }
     
-    ketchupsChecked++:
+    ketchupsChecked++;
   }
 }
 
