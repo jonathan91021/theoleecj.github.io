@@ -6,6 +6,7 @@ var bots = [
 ];
 var fryHealth = 50, points = 0, fryCoords = 0, butter = "naked";
 var lasers = [];
+var ketchups = [];
 var canvasContext = null, canvas = null, intervalSet = false;
 
 //Basic
@@ -14,7 +15,8 @@ function StartGame() {
   if (intervalSet == true) { /*Skip*/ }
   else {
     interval(Repaint, 41);
-    setInterval(AddBot, 1000);
+    interval(AddBot, 1000);
+    interval(ShootLaser, 500);
     intervalSet = true;
   }
 }
@@ -24,6 +26,13 @@ function StartPaint() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   canvasContext = canvas.getContext("2d");
+  
+  canvasContext.font = "14px Segoe UI";
+  canvasContext.fillText("Health: " + fryHealth, canvas.width - 200, canvas.height - 50);
+  
+  canvasContext.font = "14px Segoe UI";
+  canvasContext.fillText("Points: " + points, canvas.width - 400, canvas.height - 50);
+  
   InitFry();
   InitBots();
 }
@@ -36,7 +45,7 @@ function ProcessKeys(event) {
   var key = event.keyCode;
   
   if (key == 87) { butter = "butter"; }
-  else if (key == 83) { butter = "weapon"; }
+  else if (key == 83) { ShootBot(); }
   else if (key == 65 && fryCoords > -1) { fryCoords = fryCoords - 2.5; }
   else if (key == 68 && fryCoords < canvas.width) { fryCoords = fryCoords + 2.5; }
   else { /*Nothing*/ }
@@ -47,11 +56,16 @@ function Update() {
   
 }
 
-function AddLaser() {
+function ShootLaser() {
+  
+}
+
+function AddKetchup() {
 }
 
 function ShootBot() {
-  
+  if (butter == "weapon") { AddKetchup(); }
+  else { butter = "weapon"; }
 }
 
 function AddBot() {
@@ -68,7 +82,23 @@ function AddBot() {
 
 //Asset Drawing
 function InitLasers() {
+  var laserDrawn = 0, laserToDraw = lasers.length;
   
+  while (laserToDraw > laserDrawn) {
+    var currentLaser = lasers[laserDrawn];
+    canvasContext.fillRect(currentLaser.x, currentLaser.y, 5, 20);
+    laserDrawn++;
+  }
+}
+
+function InitKetchup() {
+  var ketchupDrawn = 0, ketchupToDraw = ketchups.length;
+  
+  while (ketchupToDraw > ketchupDrawn) {
+    var currentKetchup = ketchups[ketchupDrawn];
+    canvasContext.fillRect(currentKetchup.x, currentKetchup.y, 10, 70);
+    ketchupDrawn++;
+  }
 }
 
 function InitBots() {
