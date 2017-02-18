@@ -101,7 +101,7 @@ function InitFry() {
     fryImage.src = "assets/Hurt Fry.png";
   }
   else if (butter == "butter") {
-    fryImage.src = "asset/Butter Fry.png";
+    fryImage.src = "assets/Butter Fry.png";
   }
 }
 
