@@ -38,6 +38,8 @@ function StartPaint() {
   
   InitFry();
   InitBots();
+  InitKetchup();
+  InitLasers();
 }
 
 function Repaint() {
@@ -77,11 +79,17 @@ function Update() {
 }
 
 function ShootLaser() {
-  var random = Math.floor((Math.random() * 5) + 1);
+  if (lasers.length == 20) {
+    lasers.splice(0, 1);
+    ShootLaser();
+  }
+  else {
+    var random = Math.floor((Math.random() * 5) + 1);
   
-  lasers[lasers.length] = {
-    x: random * 90, y: 100
-  };
+    lasers[lasers.length] = {
+      x: random * 90, y: 100
+    };
+  }
 }
 
 function AddKetchup() {
