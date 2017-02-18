@@ -5,9 +5,10 @@ var bots = [
   }
 ];
 var fryHealth = 50, points = 0, fryCoords = 0;
-var lasers = {};
+var lasers = [];
 var canvasContext = null, canvas = null;
 
+//Basic
 function StartGame() {
   document.getElementById("Overlay").style.display = "none";
   InitBots();
@@ -22,6 +23,15 @@ function StartPaint() {
 }
 
 function Repaint() {
+}
+
+//Updating Stats
+function Update() {
+}
+
+//Asset Drawing
+function InitLaser() {
+  
 }
 
 function InitBots() {
@@ -47,6 +57,3 @@ function InitFry() {
   fryImage.src = "assets/Normal Fry.png";
 }
 
-function ShootBot() {
-
-}
