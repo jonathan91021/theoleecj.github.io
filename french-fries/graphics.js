@@ -86,7 +86,7 @@ function Update() {
     while (botsChecked < botsToCheck) {
       var currentBot = bots[botsChecked];
       
-      if ((currentKetchup.x > (currentBot.coords - 25)) && (currentKetchup.x < (currentBot.coords + 25)) && (currentKetchup.y < 20)) {
+      if ((currentKetchup.x > (currentBot.botCoords - 25)) && (currentKetchup.x < (currentBot.botCoords + 25)) && (currentKetchup.y < 20)) {
         points = points + 20;
         bots.splice(botsChecked - 1, 1);
       }
