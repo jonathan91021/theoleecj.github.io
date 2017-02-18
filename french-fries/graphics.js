@@ -16,7 +16,7 @@ function StartGame() {
   else {
     interval(Repaint, 100);
     interval(AddBot, 1000);
-    interval(ShootLaser, 500);
+    interval(ShootLaser, 750);
     intervalSet = true;
   }
 }
@@ -52,8 +52,8 @@ function ProcessKeys(event) {
   
   if (key == 87) { butter = "butter"; }
   else if (key == 83) { ShootBot(); }
-  else if (key == 65 && fryCoords > -1) { fryCoords = fryCoords - 2.5; }
-  else if (key == 68 && fryCoords < canvas.width) { fryCoords = fryCoords + 2.5; }
+  else if (key == 65 && fryCoords > -1) { fryCoords = fryCoords - 20; }
+  else if (key == 68 && fryCoords < canvas.width) { fryCoords = fryCoords + 20; }
   else { /*Nothing*/ }
 }
 
@@ -77,6 +77,26 @@ function Update() {
   }
   
   //Collisions
+  var ketchupsChecked = 0, ketchupsToCheck = ketchups.length;
+  
+  while (ketchupsChecked < ketchupsToCheck) {
+    var currentKetchup = ketchups[ketchupsChecked];
+    var botsChecked = 0, botsToCheck = bots.length;
+    
+    while (botsChecked < botsToCheck) {
+      var currentBot = bots[botsChecked];
+      
+      if ((currentKetchup.x > (currentBot.x - 25)) && (currentKetchup.x < (currentBot.x + 25)) && (currentKetchup.y < 20)) {
+        points = points + 20;
+        bots.splice(botsChecked - 1, 1);
+      }
+      else { /*No collisions*/ }
+        
+      botsChecked++;
+    }
+    
+    ketchupsChecked++:
+  }
 }
 
 function ShootLaser() {
@@ -94,6 +114,17 @@ function ShootLaser() {
 }
 
 function AddKetchup() {
+  if (ketchups.length == 20) {
+    ketchups.splice(0, 1);
+    AddKetchup();
+  }
+  else {
+    var random = Math.floor((Math.random() * 5) + 1);
+  
+    ketchups[ketchups.length] = {
+      x: fryCoords, y: window.innerHeight - 25
+    };
+  }
 }
 
 function ShootBot() {
