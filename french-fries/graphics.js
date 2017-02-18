@@ -64,7 +64,7 @@ function Update() {
   
   while (laserToDraw > laserDrawn) {
     var currentLaser = lasers[laserDrawn];
-    currentLaser.y = currentLaser.y - 25;
+    currentLaser.y = currentLaser.y + 25;
     laserDrawn++;
   }
   
@@ -72,7 +72,7 @@ function Update() {
   
   while (ketchupToDraw > ketchupDrawn) {
     var currentKetchup = ketchups[ketchupDrawn];
-    currentKetchup.y = currentKetchup.y + 25;
+    currentKetchup.y = currentKetchup.y - 25;
     ketchupDrawn++;
   }
   
@@ -119,7 +119,7 @@ function InitLasers() {
   
   while (laserToDraw > laserDrawn) {
     var currentLaser = lasers[laserDrawn];
-    canvasContext.fillStyle = "green";
+    canvasContext.fillStyle = "lightgreen";
     canvasContext.fillRect(currentLaser.x, currentLaser.y, 5, 20);
     laserDrawn++;
   }
