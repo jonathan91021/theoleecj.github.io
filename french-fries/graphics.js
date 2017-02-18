@@ -13,7 +13,7 @@ function StartGame() {
   document.getElementById("Overlay").style.display = "none";
   if (intervalSet == true) { /*Skip*/ }
   else {
-    setInterval(Repaint, 75);
+    requestAnimationFrame(Repaint);
     setInterval(AddBot, 1000);
     intervalSet = true;
   }
@@ -30,6 +30,7 @@ function StartPaint() {
 
 function Repaint() {
   StartPaint();
+  requestAnimationFrame(Repaint);
 }
 
 //Updating Stats
