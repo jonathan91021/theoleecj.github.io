@@ -33,6 +33,9 @@ function StartPaint() {
   canvasContext.font = "16px Segoe UI";
   canvasContext.fillText("Points: " + points, canvas.width - 400, canvas.height - 50);
   
+  canvasContext.font = "16px Segoe UI";
+  canvasContext.fillText("A and D to move Fry around, W to add butter and S to attack robots. " + points, canvas.width - 400, canvas.height - 25);
+  
   InitFry();
   InitBots();
 }
