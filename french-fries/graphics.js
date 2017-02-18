@@ -28,13 +28,13 @@ function StartPaint() {
   canvasContext = canvas.getContext("2d");
   
   canvasContext.font = "16px Segoe UI";
-  canvasContext.fillText("Health: " + fryHealth, canvas.width - 200, canvas.height - 50);
+  canvasContext.fillText("Health: " + fryHealth, canvas.width - 300, canvas.height - 50);
   
   canvasContext.font = "16px Segoe UI";
-  canvasContext.fillText("Points: " + points, canvas.width - 400, canvas.height - 50);
+  canvasContext.fillText("Points: " + points, canvas.width - 600, canvas.height - 50);
   
   canvasContext.font = "16px Segoe UI";
-  canvasContext.fillText("A and D to move Fry around, W to add butter and S to attack robots. " + points, canvas.width - 400, canvas.height - 25);
+  canvasContext.fillText("A and D to move Fry around, W to add butter and S to attack robots. " + points, canvas.width - 600, canvas.height - 25);
   
   InitFry();
   InitBots();
@@ -56,11 +56,32 @@ function ProcessKeys(event) {
 
 //Updating Stats
 function Update() {
+  //Update Laser and Ketchup positions
+  var laserDrawn = 0, laserToDraw = lasers.length;
   
+  while (laserToDraw > laserDrawn) {
+    var currentLaser = lasers[laserDrawn];
+    currentLaser.y = currentLaser.y - 25;
+    laserDrawn++;
+  }
+  
+  var ketchupDrawn = 0, ketchupToDraw = ketchups.length;
+  
+  while (ketchupToDraw > ketchupDrawn) {
+    var currentKetchup = ketchups[ketchupDrawn];
+    currentKetchup.y = currentKetchup.y + 25;
+    ketchupDrawn++;
+  }
+  
+  //Collisions
 }
 
 function ShootLaser() {
+  var random = Math.floor((Math.random() * 5) + 1);
   
+  lasers[lasers.length] = {
+    x: random * 90, y: 100
+  };
 }
 
 function AddKetchup() {
