@@ -4,7 +4,7 @@ var bots = [
     botHealth: 10
   }
 ];
-var fryHealth = 50, points = 0, fryCoords = 0;
+var fryHealth = 50, points = 0, fryCoords = 0, butter = "naked";
 var lasers = [];
 var canvasContext = null, canvas = null, intervalSet = false;
 
@@ -13,7 +13,7 @@ function StartGame() {
   document.getElementById("Overlay").style.display = "none";
   if (intervalSet == true) { /*Skip*/ }
   else {
-    requestAnimationFrame(Repaint);
+    interval(Repaint, 500);
     setInterval(AddBot, 1000);
     intervalSet = true;
   }
@@ -30,7 +30,17 @@ function StartPaint() {
 
 function Repaint() {
   StartPaint();
-  requestAnimationFrame(Repaint);
+}
+
+function ProcessKeys(event) {
+  var key = event.keyCode;
+  
+  if (key == 32) { AddLaser(); }
+  else if (key == 87) { butter = "butter"; }
+  else if (key == 83) { butter = "weapon"; }
+  else if (key == 65 && fryCoords > -1) { fryCoords = fryCoords - 2.5; }
+  else if (key == 68 && fryCoords < canvas.width) { fryCoords = fryCoords + 2.5; }
+  else { /*Nothing*/ }
 }
 
 //Updating Stats
@@ -39,6 +49,7 @@ function Update() {
 }
 
 function AddLaser() {
+  butter = false;
   
 }
 
@@ -79,6 +90,17 @@ function InitFry() {
     canvasContext.drawImage(fryImage, fryCoords + 10, canvas.height - 200, 200, 200);
   };
   
-  fryImage.src = "assets/Normal Fry.png";
+  if (butter == "naked") {
+    fryImage.src = "assets/Normal Fry.png";
+  }
+  else if (butter == "weapon") {
+    fryImage.src = "assets/Ketchup Fry.png";
+  }
+  else if (butter == "hurt") {
+    fryImage.src = "assets/Hurt Fry.png";
+  }
+  else if (butter == "butter") {
+    fryImage.src = "asset/Butter Fry.png";
+  }
 }
 
