@@ -14,7 +14,7 @@ function StartGame() {
   document.getElementById("Overlay").style.display = "none";
   if (intervalSet == true) { /*Skip*/ }
   else {
-    interval(Repaint, 41);
+    interval(Repaint, 100);
     interval(AddBot, 1000);
     interval(ShootLaser, 500);
     intervalSet = true;
@@ -27,10 +27,10 @@ function StartPaint() {
   canvas.height = window.innerHeight;
   canvasContext = canvas.getContext("2d");
   
-  canvasContext.font = "14px Segoe UI";
+  canvasContext.font = "16px Segoe UI";
   canvasContext.fillText("Health: " + fryHealth, canvas.width - 200, canvas.height - 50);
   
-  canvasContext.font = "14px Segoe UI";
+  canvasContext.font = "16px Segoe UI";
   canvasContext.fillText("Points: " + points, canvas.width - 400, canvas.height - 50);
   
   InitFry();
