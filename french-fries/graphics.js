@@ -35,8 +35,7 @@ function Repaint() {
 function ProcessKeys(event) {
   var key = event.keyCode;
   
-  if (key == 32) { AddLaser(); }
-  else if (key == 87) { butter = "butter"; }
+  if (key == 87) { butter = "butter"; }
   else if (key == 83) { butter = "weapon"; }
   else if (key == 65 && fryCoords > -1) { fryCoords = fryCoords - 2.5; }
   else if (key == 68 && fryCoords < canvas.width) { fryCoords = fryCoords + 2.5; }
@@ -49,7 +48,9 @@ function Update() {
 }
 
 function AddLaser() {
-  butter = false;
+}
+
+function ShootBot() {
   
 }
 
