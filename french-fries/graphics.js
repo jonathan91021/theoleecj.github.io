@@ -11,10 +11,10 @@ var canvasContext = null, canvas = null, intervalSet = false;
 //Basic
 function StartGame() {
   document.getElementById("Overlay").style.display = "none";
-  InitBots();
   if (intervalSet == true) { /*Skip*/ }
   else {
-    setInterval(Repaint, 41);
+    setInterval(Repaint, 75);
+    setInterval(AddBot, 1000);
     intervalSet = true;
   }
 }
@@ -25,19 +25,36 @@ function StartPaint() {
   canvas.height = window.innerHeight;
   canvasContext = canvas.getContext("2d");
   InitFry();
+  InitBots();
 }
 
 function Repaint() {
   StartPaint();
-  StartGame();
 }
 
 //Updating Stats
 function Update() {
+  
+}
+
+function AddLaser() {
+  
+}
+
+function AddBot() {
+  var random = Math.floor((Math.random() * 7) + 1);
+  
+  if (random == 7) {
+    bots[bots.length] = {
+      botCoords: (bots[bots.length - 1].botCoords + 30),
+      botHealth: 10
+    };
+  }
+  else { /*Skip*/ }
 }
 
 //Asset Drawing
-function InitLaser() {
+function InitLasers() {
   
 }
 
