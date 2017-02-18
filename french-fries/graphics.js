@@ -34,7 +34,7 @@ function StartPaint() {
   canvasContext.fillText("Points: " + points, canvas.width - 600, canvas.height - 50);
   
   canvasContext.font = "16px Segoe UI";
-  canvasContext.fillText("A and D to move Fry around, W to add butter and S to attack robots. " + points, canvas.width - 600, canvas.height - 25);
+  canvasContext.fillText("A and D to move Fry around, W to add butter and S to attack robots.", canvas.width - 600, canvas.height - 25);
   
   InitFry();
   InitBots();
@@ -86,7 +86,7 @@ function Update() {
     while (botsChecked < botsToCheck) {
       var currentBot = bots[botsChecked];
       
-      if ((currentKetchup.x > (currentBot.x - 25)) && (currentKetchup.x < (currentBot.x + 25)) && (currentKetchup.y < 20)) {
+      if ((currentKetchup.x > (currentBot.coords - 25)) && (currentKetchup.x < (currentBot.coords + 25)) && (currentKetchup.y < 20)) {
         points = points + 20;
         bots.splice(botsChecked - 1, 1);
       }
@@ -122,7 +122,7 @@ function AddKetchup() {
     var random = Math.floor((Math.random() * 5) + 1);
   
     ketchups[ketchups.length] = {
-      x: fryCoords, y: window.innerHeight - 25
+      x: fryCoords + 25, y: window.innerHeight - 25
     };
   }
 }
@@ -161,6 +161,7 @@ function InitKetchup() {
   
   while (ketchupToDraw > ketchupDrawn) {
     var currentKetchup = ketchups[ketchupDrawn];
+    canvasContext.fillStyle = "red";
     canvasContext.fillRect(currentKetchup.x, currentKetchup.y, 10, 70);
     ketchupDrawn++;
   }
