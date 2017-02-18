@@ -6,12 +6,17 @@ var bots = [
 ];
 var fryHealth = 50, points = 0, fryCoords = 0;
 var lasers = [];
-var canvasContext = null, canvas = null;
+var canvasContext = null, canvas = null, intervalSet = false;
 
 //Basic
 function StartGame() {
   document.getElementById("Overlay").style.display = "none";
   InitBots();
+  if (intervalSet == true) { /*Skip*/ }
+  else {
+    setInterval(Repaint, 41);
+    intervalSet = true;
+  }
 }
 
 function StartPaint() {
@@ -23,6 +28,8 @@ function StartPaint() {
 }
 
 function Repaint() {
+  StartPaint();
+  StartGame();
 }
 
 //Updating Stats
