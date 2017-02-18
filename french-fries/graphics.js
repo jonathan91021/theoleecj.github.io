@@ -57,9 +57,9 @@ function ShootBot() {
 function AddBot() {
   var random = Math.floor((Math.random() * 7) + 1);
   
-  if (random == 7) {
+  if (random == 7 && (bots.length < 5)) {
     bots[bots.length] = {
-      botCoords: (bots[bots.length - 1].botCoords + 30),
+      botCoords: (bots[bots.length - 1].botCoords + 100),
       botHealth: 10
     };
   }
