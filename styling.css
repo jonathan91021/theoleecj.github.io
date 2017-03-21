@@ -1,3 +1,8 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  cursor: default;
+}
+
 #Page-TitleBar {
   background-color: green; color: white;
   padding: 10px;
@@ -13,3 +18,22 @@
   background-color: #d9d9d9;
   z-index: 1;
 }
+
+.Tile {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.Tile-Title {
+  z-index: 2;
+  background-color: lightgray;
+  font-size: 20px;
+}
+
+.Tile-Content {
+  z-index: 1;
+  background-color: black; color: white;
+}
+
+.Tile-Title
