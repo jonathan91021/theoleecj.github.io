@@ -25,6 +25,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   display: inline-block;
+  height: 300px;
 }
 
 .Tile-Title {
@@ -32,21 +33,25 @@ body {
   background-color: lightgray;
   font-size: 20px;
   position: relative;
+  top: -10px; left: -10px;
+  height: 300px;
   padding: 10px;
-}
-
-@media screen and (min-width: 541px) {
-  .Tile-Title { width: 300px; }
-}
-
-@media screen and (max-width: 540px) {
-  .Tile-Title { width: 100%; }
 }
 
 .Tile-Content {
   position: relative;
   top: -27px;
   color: white;
+}
+
+@media screen and (min-width: 541px) {
+  .Tile { width: 350px; }
+  .Tile-Title { width: 350px; }
+}
+
+@media screen and (max-width: 540px) {
+  .Tile { width: calc(100% - 20px); }
+  .Tile-Title { width: calc(100% - 20px); }
 }
 
 .Tile-Title:hover {
