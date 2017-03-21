@@ -45,11 +45,11 @@ body {
 
 @media screen and (min-width: 541px) {
   .Tile { width: 350px; }
-  .Tile-Title { width: 350px; }
+  .Tile-Title { width: 330px; }
 }
 
 @media screen and (max-width: 540px) {
-  .Tile { width: calc(100% - 20px); }
+  .Tile { width: 100%; }
   .Tile-Title { width: calc(100% - 20px); }
 }
 
