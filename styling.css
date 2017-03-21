@@ -35,6 +35,14 @@ body {
   padding: 10px;
 }
 
+@media screen and (min-width: 541px) {
+  .Tile-Title { width: 300px; }
+}
+
+@media screen and (max-width: 540px) {
+  .Tile-Title { width: 100%; }
+}
+
 .Tile-Content {
   position: relative;
   top: -27px;
