@@ -21,6 +21,9 @@ body {
 }
 
 .Tile {
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
   display: inline-block;
 }
 
@@ -28,18 +31,19 @@ body {
   z-index: 2;
   background-color: lightgray;
   font-size: 20px;
+  position: relative;
+  padding: 10px;
 }
 
 .Tile-Content {
-  z-index: 1;
   position: relative;
   top: -27px;
-  background-color: black; color: white;
+  color: white;
 }
 
 .Tile-Title:hover {
   animation-name: ToggleTileOpacity;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
 }
 
 @keyframes ToggleTileOpacity {
