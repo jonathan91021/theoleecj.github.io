@@ -4,6 +4,7 @@
     <title>Mastermind | Weird Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <script src="/mastermind/game.js"></script>
     <link href="/styling.css" rel="stylesheet" />
   </head>
   
@@ -14,14 +15,14 @@
       
       <!--Main Menu Scene-->
       <g id="MainMenu">
-        <text alignment-baseline="middle" text-anchor="middle" x="800" y="200" style="font-size: 96px;">Mastermind</text>
+        <text alignment-baseline="middle" text-anchor="middle" x="800" y="200" style="font-size: 96px;" fill="white">Mastermind</text>
         
-        <g id="MainMenu-StartGame">
-          <rect width="600" height="70" fill="lightgray" x="500" y="450" />
-          <text alignment-baseline="middle" text-anchor="middle" x="800" y="400" style="font-size: 48px;" fill="white">Play as Guesser</text>
+        <g id="MainMenu-StartGame" onclick="StartAsGuesser();">
+          <rect width="600" height="100" fill="lightgray" x="500" y="450" />
+          <text alignment-baseline="middle" text-anchor="middle" x="800" y="425" style="font-size: 48px;" fill="white">Play as Guesser</text>
         </g>
       
-        <text alignment-baseline="middle" text-anchor="middle" x="1200" y="850" style="font-size: 24px;">Yep. Yet another online Mastermind Game... BUT WHO CARES?</text>
+        <text alignment-baseline="middle" text-anchor="middle" x="1200" y="850" style="font-size: 24px;" fill="white">Yep. Yet another online Mastermind Game... BUT WHO CARES?</text>
       </g>
     </svg>
   </body>
