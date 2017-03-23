@@ -13,3 +13,9 @@ while (compsResultsPopulated < 12) {
   compsResultsPopulated++;
   compsResults["row" + compsResultsPopulated] = ["none", "none", "none", "none"];
 }
+
+//Start game as guesser
+function StartAsGuesser() {
+  document.getElementById("MainMenu").style.display = "none";
+  document.getElementById("Board").style.display = "block";
+}
