@@ -14,7 +14,7 @@
         var x = event.clientX, y = event.clientY;
         
         //Scale to SVG size
-        x = ((x / 1600) * window.innerWidth) + 75, y = ((y / 900) * window.innerHeight) + 75;
+        x = ((x / window.innerWidth) * 1600) + 75, y = ((y / window.innerHeight) * 900) + 75;
         
         //Move placer
         document.getElementById("Placer").setAttribute("cx", x);
