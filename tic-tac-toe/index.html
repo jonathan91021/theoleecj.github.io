@@ -10,7 +10,7 @@
       var currentTurn = "red";
       
       function FillAs(x, y) {
-        document.getElementById(x + ", " + y).fill = currentTurn;
+        document.getElementById(x + ", " + y).setAttribute("fill", currentTurn);
         pieceInfo[x][y] = currentTurn;
         
         CheckWin(currentTurn, x, y);
