@@ -13,12 +13,9 @@
       function MovePlacer(event) {
         var x = event.clientX, y = event.clientY;
         
-        //Scale to SVG size
-        x = ((x / window.innerWidth) * 1600) + 75, y = ((y / window.innerHeight) * 900) + 75;
-        
         //Move placer
-        document.getElementById("Placer").setAttribute("cx", x);
-        document.getElementById("Placer").setAttribute("cy", y);
+        document.getElementById("Placer").style.left = (x + 75) + "px";
+        document.getElementById("Placer").style.top = (y + 75) + "px";
       }
     </script>
     
@@ -44,10 +41,10 @@
       <circle r="80" cx="800" cy="650" fill="white" />
       <circle r="80" cx="1000" cy="650" fill="white" />
       
-      <circle id="Placer" r="80" cx="1000" cy="650" fill="red" />
-      
       <rect fill="lightgrey" widht="1600" height="150" x="0" y="750" opacity="0.85" />
       <text id="GameStatus" alignment-baseline="middle" text-anchor="middle" style="font-size: 48px;" x="800" y="825" fill="black">It's red's turn!</text>
     </svg>
+    
+    <div id="Placer" style="width: 100px; height: 100px; position: absolute; border-radius: 50%;"></div>
   </body>
 </html>
