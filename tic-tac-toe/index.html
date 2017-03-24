@@ -11,7 +11,7 @@
       
       function FillAs(x, y) {
         document.getElementById(x + ", " + y).setAttribute("fill", currentTurn);
-        pieceInfo[x][y] = currentTurn;
+        pieceInfo[x - 1][y - 1] = currentTurn;
         
         CheckWin(currentTurn, x, y);
         
@@ -23,7 +23,26 @@
       }
       
       function CheckWin(colourToCheck, x, y) {
-        //Check left
+        var a = 3, b = 3, matchesFound = 0;
+        
+        //Check horizontal
+        while (a > 0) {
+          a--;
+          
+          while (b > 0) {
+            if (pieceInfo[a][b] == colourToCheck) {
+              matchesFound++;
+              if (matchesFound == 3) { document.getElementById("GameStatus").innerHTML = "The player " + currentTurn + "wins!"; }
+            }
+            else { matchesFound == 0; }
+          }
+          
+          b = 3;
+        }
+        
+        a = 3;
+        
+        //Check vertical
       }
       
       function MovePlacer(event) {
@@ -40,7 +59,7 @@
     </style>
   </head>
   
-  <body onmousemove="MovePlacer(event);">
+  <body onmousemove="MovePlacer(event);" style="overflow: hidden;">
     <svg viewbox="0, 0, 1600, 900" class="VideoGameSVG">
       <rect fill="black" width="1600" height="900" x="0" y="0" />
       
