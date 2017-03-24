@@ -38,8 +38,19 @@ function LoadDefaultPieces() {
     //Generate 4 blank spaces for placement
     var blankSpaces = document.createElement("circle");
     blankSpaces.setAttribute("cx", (100 + (rowsRendered * 45)));
-    blankSpaces.setAttribute("cy", "730");
     blankSpaces.setAttribute("r", "20");
+    
+    blankSpaces.setAttribute("cy", "730");
+    document.getElementById("Board-GuessPieces").appendChild(blankSpaces);
+    
+    blankSpaces.setAttribute("cy", "710");
+    document.getElementById("Board-GuessPieces").appendChild(blankSpaces);
+    
+    blankSpaces.setAttribute("cy", "690");
+    document.getElementById("Board-GuessPieces").appendChild(blankSpaces);
+    
+    blankSpaces.setAttribute("cy", "670");
+    document.getElementById("Board-GuessPieces").appendChild(blankSpaces);
     
     //Generate spaces for computer to tell user result of their guess
   }
