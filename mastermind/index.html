@@ -36,9 +36,6 @@
         <g id="Board-GuessPieces"></g>
         <g id="Board-ComputerMarkingPieces"></g>
         
-        <!--Placement overlay (top)-->
-        <rect id="OstructPlacementOfPins" style="display: none;" x="800" y="750" width="800" height="150" fill="lightgray" opacity="0.85" />
-        
         <!--Status of game-->
         <rect fill="lightgray" opacity="0.85" x="0" y="750" width="1600" height="150" />
         <text id="GameStatus" alignment-baseline="middle" text-anchor="middle" style="font-size: 48px;" x="400" y="825" fill="black">It's your turn!</text>
@@ -51,8 +48,8 @@
         <circle onclick="AttachColourToCursor('white');" cx="1100" r="20" cy="800" fill="white" />
         <circle onclick="AttachColourToCursor('purple');" cx="1160" r="20" cy="800" fill="purple" />
         
-        <!--Prevent player from getting a colour-->
-        <!--...-->
+        <!--Placement overlay (top)-->
+        <rect id="OstructPlacementOfPins" style="display: none;" x="800" y="750" width="800" height="150" fill="lightgray" opacity="0.85" />
       </g>
     </svg>
   </body>
