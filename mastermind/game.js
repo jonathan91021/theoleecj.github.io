@@ -14,6 +14,30 @@ while (compsResultsPopulated < 12) {
   compsResults["row" + compsResultsPopulated] = ["none", "none", "none", "none"];
 }
 
+//Numbers to colours
+function NumberToColour(number) {
+  switch (number) {
+    case 0:
+      return "red";
+      break;
+    case 1:
+      return "green";
+      break;
+    case 2:
+      return "#2196f3";
+      break;
+    case 3:
+      return "yellow";
+      break;
+    case 4:
+      return "white";
+      break;
+    case 5:
+      return "purple";
+      break;
+  }
+}
+
 //Start game as guesser
 function StartAsGuesser() {
   document.getElementById("MainMenu").style.display = "none";
@@ -25,7 +49,8 @@ function StartAsGuesser() {
 
 //Set computer's guesses
 function LoadComputerAsSetter() {
-  
+  compSeries = [NumberToColour(Math.floor((Math.random() * 6))), NumberToColour(Math.floor((Math.random() * 6))), NumberToColour(Math.floor((Math.random() * 6))), NumberToColour(Math.floor((Math.random() * 6)))];
+  console.log("Random series generated. Random series is " + compSeries);
 }
 
 //Place default blank pieces onto board
@@ -36,16 +61,16 @@ function LoadDefaultPieces() {
     rowsRendered++;
     
     //Generate 4 blank spaces for placement
-    var blankSpaces = "<circle cx='" + (100 + (rowsRendered * 45)) + "' r='20' cy='700' fill='lightgrey' />";
+    var blankSpaces = "<circle cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='700' fill='lightgrey' />";
     document.getElementById("Board-GuessPieces").innerHTML = document.getElementById("Board-GuessPieces").innerHTML + blankSpaces;
     
-    blankSpaces = "<circle cx='" + (100 + (rowsRendered * 45)) + "' r='20' cy='640' fill='lightgrey' />";
+    blankSpaces = "<circle cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='620' fill='lightgrey' />";
     document.getElementById("Board-GuessPieces").innerHTML = document.getElementById("Board-GuessPieces").innerHTML + blankSpaces;
     
-    blankSpaces = "<circle cx='" + (100 + (rowsRendered * 45)) + "' r='20' cy='580' fill='lightgrey' />";
+    blankSpaces = "<circle cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='540' fill='lightgrey' />";
     document.getElementById("Board-GuessPieces").innerHTML = document.getElementById("Board-GuessPieces").innerHTML + blankSpaces;
     
-    blankSpaces = "<circle cx='" + (100 + (rowsRendered * 45)) + "' r='20' cy='520' fill='lightgrey' />";
+    blankSpaces = "<circle cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='460' fill='lightgrey' />";
     document.getElementById("Board-GuessPieces").innerHTML = document.getElementById("Board-GuessPieces").innerHTML + blankSpaces;
     
     //Generate spaces for computer to tell user result of their guess
