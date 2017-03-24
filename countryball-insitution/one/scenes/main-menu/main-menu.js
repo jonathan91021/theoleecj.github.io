@@ -16,8 +16,3 @@ function StartGame(ball) {
 //Instructions
 function Instructions() { document.getElementById("MainMenu-Instructions").style.display = "block"; }
 function CloseInstructions() { document.getElementById("MainMenu-Instructions").style.display = "none"; }
-
-//Disclaimer
-function Quit() {
-  
-}
