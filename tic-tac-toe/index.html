@@ -6,7 +6,7 @@
     <!--Legit, why am I making this thing... :(-->
     
     <script>
-      function PlacePiece() {
+      function FillAs() {
         
       }
       
@@ -27,21 +27,21 @@
   <body onmousemove="MovePlacer(event);">
     <svg viewbox="0, 0, 1600, 900" class="VideoGameSVG">
       <rect fill="black" width="1600" height="900" x="0" y="0" />
-      <rect fill="lightgrey" widht="600" height="600" x="500" y="150" opacity="0.85" />
+      <rect fill="lightgrey" width="600" height="600" x="500" y="150" opacity="0.85" />
       
-      <circle onclick="FillAs('1');" r="80" cx="600" cy="250" fill="white" />
-      <circle onclick="FillAs('2');" r="80" cx="800" cy="250" fill="white" />
-      <circle onclick="FillAs('3');" r="80" cx="1000" cy="250" fill="white" />
+      <circle onclick="FillAs(1, 1);" r="80" cx="600" cy="250" fill="white" />
+      <circle onclick="FillAs(2, 1);" r="80" cx="800" cy="250" fill="white" />
+      <circle onclick="FillAs(3, 1);" r="80" cx="1000" cy="250" fill="white" />
       
-      <circle onclick="FillAs('4');" r="80" cx="600" cy="450" fill="white" />
-      <circle onclick="FillAs('5');" r="80" cx="800" cy="450" fill="white" />
-      <circle onclick="FillAs('6');" r="80" cx="1000" cy="450" fill="white" />
+      <circle onclick="FillAs(4, 2);" r="80" cx="600" cy="450" fill="white" />
+      <circle onclick="FillAs(5, 2);" r="80" cx="800" cy="450" fill="white" />
+      <circle onclick="FillAs(6, 2);" r="80" cx="1000" cy="450" fill="white" />
       
-      <circle onclick="FillAs('7');" r="80" cx="600" cy="650" fill="white" />
-      <circle onclick="FillAs('8');" r="80" cx="800" cy="650" fill="white" />
-      <circle onclick="FillAs('9');" r="80" cx="1000" cy="650" fill="white" />
+      <circle onclick="FillAs(7, 3);" r="80" cx="600" cy="650" fill="white" />
+      <circle onclick="FillAs(8, 3);" r="80" cx="800" cy="650" fill="white" />
+      <circle onclick="FillAs(9, 3);" r="80" cx="1000" cy="650" fill="white" />
       
-      <rect fill="lightgrey" widht="1600" height="150" x="0" y="750" opacity="0.85" />
+      <rect fill="lightgrey" width="1600" height="150" x="0" y="750" opacity="0.85" />
       <text id="GameStatus" alignment-baseline="middle" text-anchor="middle" style="font-size: 48px;" x="800" y="825" fill="black">It's red's turn!</text>
     </svg>
     
