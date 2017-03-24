@@ -1,0 +1,70 @@
+<!--Background color-->
+<rect x="0" y="0" width="1600" height="900" />
+
+<!--Text-->
+<g id="MainMenu-Logo">
+  <text alignment-baseline="middle" text-anchor="middle" x="800" y="120" style="font-size: 100px;" fill="white">Balls Sch&nbsp;&nbsp;&nbsp;&nbsp;l</text>
+  <image xlink:href="sprites/polandball.png" x="920" y="90" height="64" width="64" />
+  <image xlink:href="sprites/russia.png" x="975" y="90" height="64" width="64" />
+</g>
+
+<!--Buttons-->
+<rect class="button" onclick="ChooseCharacter();" width="400" height="100" x="600" y="250" fill="lightgray" />
+<text class="button" onclick="ChooseCharacter();" alignment-baseline="middle" text-anchor="middle" x="800" y="305" style="font-size: 48px;" fill="black">New Game</text>
+
+<rect width="400" height="100" x="600" y="370" fill="gray" />
+<text alignment-baseline="middle" text-anchor="middle" x="800" y="425" style="font-size: 48px;" fill="white">Continue</text>
+
+<rect class="button" onclick="Instructions();" width="400" height="100" x="600" y="490" fill="lightgray" />
+<text class="button" onclick="Instructions();" alignment-baseline="middle" text-anchor="middle" x="800" y="545" style="font-size: 48px;" fill="black">Instructions</text>
+
+<rect class="button" onclick="SpecialFeatures();" width="400" height="100" x="600" y="610" fill="lightgray" />
+<text class="button" onclick="SpecialFeatures();" alignment-baseline="middle" text-anchor="middle" x="800" y="665" style="font-size: 48px;" fill="black">Special Features</text>
+
+<rect class="button" onclick="Quit();" width="400" height="100" x="600" y="730" fill="lightgray" />
+<text class="button" onclick="Quit();" alignment-baseline="middle" text-anchor="middle" x="800" y="785" style="font-size: 48px;" fill="black">Disclaimer</text>
+
+<!--New Game-->
+<g id="MainMenu-ChooseCharacter" style="display: none;">
+  <rect x="30" y="30" fill="gray" style="opacity: 0.9;" width="1540" height="840" />
+  <text x="50" y="86" fill="white" style="font-size: 36px;">New Game</text>
+
+  <!--Close-->
+  <rect onclick="CloseChooseCharacter();" x="1360" y="40" fill="black" class="button" width="200" height="80" />
+  <text onclick="CloseChooseCharacter();" class="button" alignment-baseline="middle" text-anchor="middle" x="1460" y="85" fill="white" style="font-size: 36px;">Back</text>
+
+  <text alignment-baseline="middle" text-anchor="middle" x="800" y="120" fill="white" style="font-size: 30px;">Choose Your Character (this will affect the gameplay)</text>
+
+  <!--Polandball-->
+  <g id="MainMenu-Polandball">
+    <rect x="150" y="200" fill="black" class="button" width="400" height="600" />
+    <image class="button" xlink:href="sprites/balls/polandball/polandball-happy.png" width="300" height="300" x="200" y="350" />
+    <text class="button" alignment-baseline="middle" text-anchor="middle" x="350" y="300" fill="white" style="font-size: 48px;">Poland</text>
+    <rect x="150" y="200" fill="gray" width="400" height="600" style="opacity: 0.5;" />
+  </g>
+
+  <!--USABall-->
+  <g id="MainMenu-USABall" onclick="StartGame('usaball');">
+    <rect x="600" y="200" fill="black" class="button" width="400" height="600" />
+    <image class="button" xlink:href="sprites/balls/america/america.png" width="300" height="300" x="650" y="350" />
+    <text class="button" alignment-baseline="middle" text-anchor="middle" x="800" y="300" fill="white" style="font-size: 48px;">USA</text>
+  </g>
+
+  <!--Chinaball-->
+  <g id="MainMenu-Chinaball">
+    <rect x="1050" y="200" fill="black" class="button" width="400" height="600" />
+    <image class="button" xlink:href="sprites/balls/chinaball/chinaball.png" width="300" height="300" x="1100" y="350" />
+    <text class="button" alignment-baseline="middle" text-anchor="middle" x="1250" y="300" fill="white" style="font-size: 48px;">China</text>
+    <rect x="1050" y="200" fill="gray" width="400" height="600" style="opacity: 0.5;" />
+  </g>
+</g>
+
+<!--Instructions-->
+<g id="MainMenu-Instructions" style="display: none;">
+  <rect x="30" y="30" fill="gray" style="opacity: 0.9;" width="1540" height="840" />
+  <text x="50" y="86" fill="white" style="font-size: 36px;">Instructions</text>
+
+  <!--Close-->
+  <rect onclick="CloseInstructions();" x="1360" y="40" fill="black" class="button" width="200" height="80" />
+  <text onclick="CloseInstructions();" class="button" alignment-baseline="middle" text-anchor="middle" x="1460" y="85" fill="white" style="font-size: 36px;">Back</text>
+</g>
