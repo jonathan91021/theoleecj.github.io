@@ -11,7 +11,7 @@
       
       function FillAs(x, y) {
         document.getElementById(x + ", " + y).style.backgroundColor = currentTurn;
-        playerInfo[x][y] = currentTurn;
+        pieceInfo[x][y] = currentTurn;
         
         CheckWin(currentTurn, x, y);
         
