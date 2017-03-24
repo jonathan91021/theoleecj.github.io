@@ -16,7 +16,7 @@
         CheckWin(currentTurn, x, y);
         
         if (currentTurn == "red") { currentTurn = "yellow"; }
-        else { currentTurn - "red"; }
+        else { currentTurn = "red"; }
         
         document.getElementById("Placer").style.backgroundColor = currentTurn;
         document.getElementById("GameStatus").innerHTML = "It's " + currentTurn + "'s turn.";
