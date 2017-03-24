@@ -17,10 +17,13 @@
         
         if (currentTurn == "red") { currentTurn = "yellow"; }
         else { currentTurn - "red"; }
+        
+        document.getElementById("Placer").style.backgroundColor = currentTurn;
+        document.getElementById("GameStatus").innerHTML = "It's " + currentTurn + "'s turn.";
       }
       
       function CheckWin(colourToCheck, x, y) {
-        
+        //Check left
       }
       
       function MovePlacer(event) {
@@ -45,13 +48,13 @@
       <circle id="2, 1" onclick="FillAs(2, 1);" r="80" cx="800" cy="250" fill="white" />
       <circle id="3, 1" onclick="FillAs(3, 1);" r="80" cx="1000" cy="250" fill="white" />
       
-      <circle id="1, 2" onclick="FillAs(4, 2);" r="80" cx="600" cy="450" fill="white" />
-      <circle id="2, 2" onclick="FillAs(5, 2);" r="80" cx="800" cy="450" fill="white" />
-      <circle id="3, 2" onclick="FillAs(6, 2);" r="80" cx="1000" cy="450" fill="white" />
+      <circle id="1, 2" onclick="FillAs(1, 2);" r="80" cx="600" cy="450" fill="white" />
+      <circle id="2, 2" onclick="FillAs(2, 2);" r="80" cx="800" cy="450" fill="white" />
+      <circle id="3, 2" onclick="FillAs(3, 2);" r="80" cx="1000" cy="450" fill="white" />
       
-      <circle id="1, 3" onclick="FillAs(7, 3);" r="80" cx="600" cy="650" fill="white" />
-      <circle id="2, 3" onclick="FillAs(8, 3);" r="80" cx="800" cy="650" fill="white" />
-      <circle id="3, 3" onclick="FillAs(9, 3);" r="80" cx="1000" cy="650" fill="white" />
+      <circle id="1, 3" onclick="FillAs(1, 3);" r="80" cx="600" cy="650" fill="white" />
+      <circle id="2, 3" onclick="FillAs(2, 3);" r="80" cx="800" cy="650" fill="white" />
+      <circle id="3, 3" onclick="FillAs(3, 3);" r="80" cx="1000" cy="650" fill="white" />
       
       <rect fill="lightgrey" width="1600" height="150" x="0" y="750" opacity="0.85" />
       <text id="GameStatus" alignment-baseline="middle" text-anchor="middle" style="font-size: 48px;" x="800" y="825" fill="black">It's red's turn!</text>
