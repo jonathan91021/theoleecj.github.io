@@ -8,7 +8,7 @@
     <link href="/styling.css" rel="stylesheet" />
   </head>
   
-  <body>
+  <body onload="LoadDefaultPieces();">
     <svg viewbox="0, 0, 1600, 900" class="VideoGameSVG">
       <!--Main Menu Scene-->
       <g id="MainMenu">
@@ -27,7 +27,18 @@
       
       <!--Mastermind Board-->
       <g id="Board" style="display: none;">
-        <image x="
+        <image x="0" y="0" width="1600" height="900" xlink:href="background.png" />
+        
+        <!--Mastermind Board-->
+        <rect width="1400" height="600" fill="black" x="100" y="100" />
+        
+        <!--Generate pieces here-->
+        <g id="Board-GuessPieces"></g>
+        <g id="Board-ComputerMarkingPieces"></g>
+        
+        <!--Placement overlay-->
+        
+        <!---->
       </g>
     </svg>
   </body>
