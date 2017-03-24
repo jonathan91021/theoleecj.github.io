@@ -26,10 +26,12 @@
         var a = 3, b = 3, matchesFound = 0;
         
         //Check horizontal
-        while (a > 0) {
+        while (a > -1) {
           a--;
           
-          while (b > 0) {
+          while (b > -1) {
+            b--;
+            
             if (pieceInfo[a][b] == colourToCheck) {
               matchesFound++;
               if (matchesFound == 3) { document.getElementById("GameStatus").innerHTML = "The player " + currentTurn + "wins!"; }
