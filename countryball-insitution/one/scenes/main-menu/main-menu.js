@@ -12,7 +12,3 @@ function StartGame(ball) {
   localStorage.setItem("currentGame", '[{ "ball": "' + ball + '" }]'); //parsedJSONObject[0].ball;
   PlayCutscene1();
 }
-
-//Instructions
-function Instructions() { document.getElementById("MainMenu-Instructions").style.display = "block"; }
-function CloseInstructions() { document.getElementById("MainMenu-Instructions").style.display = "none"; }
