@@ -9,14 +9,25 @@
       function PlacePiece() {
         
       }
+      
+      function MovePlacer(event) {
+        var x = event.clientX, y = event.clientY;
+        
+        //Scale to SVG size
+        x = ((x / 1600) * window.innerWidth) + 75, y = ((y / 900) * window.innerHeight) + 75;
+        
+        //Move placer
+        document.getElementById("Placer").setAttribute("cx", x);
+        document.getElementById("Placer").setAttribute("cy", y);
+      }
     </script>
     
     <style>
-      .
+      
     </style>
   </head>
   
-  <body>
+  <body onmousemove="MovePlacer(event);">
     <svg viewbox="0, 0, 1600, 900" class="VideoGameSVG">
       <rect fill="black" width="1600" height="900" x="0" y="0" />
       <rect fill="lightgrey" widht="600" height="600" x="500" y="150" opacity="0.85" />
@@ -32,6 +43,8 @@
       <circle r="80" cx="600" cy="650" fill="white" />
       <circle r="80" cx="800" cy="650" fill="white" />
       <circle r="80" cx="1000" cy="650" fill="white" />
+      
+      <circle id="Placer" r="80" cx="1000" cy="650" fill="red" />
       
       <rect fill="lightgrey" widht="1600" height="150" x="0" y="750" opacity="0.85" />
       <text id="GameStatus" alignment-baseline="middle" text-anchor="middle" style="font-size: 48px;" x="800" y="825" fill="black">It's red's turn!</text>
