@@ -1,0 +1,11 @@
+<!--Background-->
+<rect fill="black" width="1600" height="900" x="0" y="0" />
+
+<!--Countryball Institution logo-->
+<image xlink:href="sprites/logo.png" x="200" y="100" />
+
+<!--Start game-->
+<g class="button" onclick="PlayIntro();">
+  <rect fill="lightgray" width="600" height="100" x="500" y="500" />
+  <text alignment-baseline="middle" text-anchor="middle" x="800" y="555" style="font-size: 48px;">Start</text>
+</g>
