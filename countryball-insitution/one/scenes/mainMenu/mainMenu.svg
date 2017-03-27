@@ -1,0 +1,36 @@
+<!--Background-->
+<rect fill="black" width="1600" height="900" x="0" y="0" />
+
+<!--Logo-->
+<image xlink:href="sprites/logo.png" x="200" y="50" />>
+
+<!--Buttons-->
+<g class="button">
+  <rect fill="lightgray" width="600" height="80" x="500" y="250" />
+  <text alignment-baseline="middle" text-anchor="middle" x="800" y="290" style="font-size: 48px;">New Game</text>
+</g>
+
+<g class="button">
+  <rect fill="lightgray" width="600" height="80" x="500" y="350" />
+  <text alignment-baseline="middle" text-anchor="middle" x="800" y="390" style="font-size: 48px;">Continue Game</text>
+</g>
+
+<g class="button">
+  <rect fill="lightgray" width="600" height="80" x="500" y="450" />
+  <text alignment-baseline="middle" text-anchor="middle" x="800" y="490" style="font-size: 48px;">Instructions</text>
+</g>
+
+<g class="button">
+  <rect fill="lightgray" width="600" height="80" x="500" y="550" />
+  <text alignment-baseline="middle" text-anchor="middle" x="800" y="590" style="font-size: 48px;">Disclaimer</text>
+</g>
+
+<g class="button">
+  <rect fill="lightgray" width="600" height="80" x="500" y="650" />
+  <text alignment-baseline="middle" text-anchor="middle" x="800" y="690" style="font-size: 48px;">Special Features</text>
+</g>
+
+<g class="button" onclick="Quit();">
+  <rect fill="lightgray" width="600" height="80" x="500" y="750" />
+  <text alignment-baseline="middle" text-anchor="middle" x="800" y="790" style="font-size: 48px;">Quit</text>
+</g>
