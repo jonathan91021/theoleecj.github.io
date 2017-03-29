@@ -1,3 +1,13 @@
+<!--Styling for dialogs-->
+<style type="text/css" scoped="scoped">
+  .Dialog {
+    opacity: 0.95;
+    height: 800px; width: 1400px;
+  }
+
+  dt { font-weight: bold; }
+</style>
+
 <!--Background-->
 <rect fill="black" width="1600" height="900" x="0" y="0" />
 
@@ -5,27 +15,27 @@
 <image xlink:href="sprites/logo.png" x="200" y="50" />>
 
 <!--Buttons-->
-<g class="button">
+<g class="button" onclick="StartGame();">
   <rect fill="lightgray" width="600" height="80" x="500" y="250" />
   <text alignment-baseline="middle" text-anchor="middle" x="800" y="290" style="font-size: 48px;">New Game</text>
 </g>
 
-<g class="button">
+<g class="button" onclick="LoadGame();">
   <rect fill="lightgray" width="600" height="80" x="500" y="350" />
   <text alignment-baseline="middle" text-anchor="middle" x="800" y="390" style="font-size: 48px;">Continue Game</text>
 </g>
 
-<g class="button">
+<g class="button" onclick="document.getElementById('MainMenu-Instructions').style.display = 'block';">
   <rect fill="lightgray" width="600" height="80" x="500" y="450" />
   <text alignment-baseline="middle" text-anchor="middle" x="800" y="490" style="font-size: 48px;">Instructions</text>
 </g>
 
-<g class="button">
+<g class="button" onclick="document.getElementById('MainMenu-Disclaimer').style.display = 'block';">
   <rect fill="lightgray" width="600" height="80" x="500" y="550" />
   <text alignment-baseline="middle" text-anchor="middle" x="800" y="590" style="font-size: 48px;">Disclaimer</text>
 </g>
 
-<g class="button">
+<g class="button" onclick="document.getElementById('MainMenu-Special').style.display = 'block';">
   <rect fill="lightgray" width="600" height="80" x="500" y="650" />
   <text alignment-baseline="middle" text-anchor="middle" x="800" y="690" style="font-size: 48px;">Special Features</text>
 </g>
@@ -33,4 +43,54 @@
 <g class="button" onclick="Quit();">
   <rect fill="lightgray" width="600" height="80" x="500" y="750" />
   <text alignment-baseline="middle" text-anchor="middle" x="800" y="790" style="font-size: 48px;">Quit</text>
+</g>
+
+<!--Instructions-->
+<g id="MainMenu-Instructions" style="display: none;">
+  <rect rx="15" ry="15" fill="lightgrey" x="100" y="50" class="Dialog" />
+  
+  <g onclick="document.getElementById('MainMenu-Instructions').style.display = 'none';" class="button">
+    <rect fill="black" x="120" y="70" width="300" height="80" />
+    <text fill="white" alignment-baseline="middle" text-anchor="middle" x="270" y="110" style="font-size: 48px;">Back</text>
+  </g>
+
+  <text x="800" y="120" alignment-baseline="middle" text-anchor="middle" style="font-size: 72px;">Instructions</text>
+
+  <foreignObject x="150" y="180" width="1300" height="500" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div style="font-size: 36px; overflow-y: scroll; max-height: 500px;" xmlns="http://www.w3.org/1999/xhtml">
+      Countryball Institution is a point-and-click game, combining various elements of other genres.
+      <dl>
+        <dt>Gameplay</dt>
+        <dd>Use the on-screen arrows in the game to move your character around the school. Dialogue in cutscenes and interactions can be advanced by clicking on the arrows in the bottom-right corner.</dd>
+
+        <dt>Interacting with NPCs</dt>
+        <dd>You can interact with NPCs in the game simply by clicking on them and selecting what kind of interaction you would like to have with them.</dd>
+
+        <dt>Winning the Game</dt>
+        <dd>To win the game, escape the school compound.</dd>
+      </dl>
+    </div>
+  </foreignObject>
+</g>
+
+<!--Disclaimer-->
+<g id="MainMenu-Disclaimer" style="display: none;">
+  <rect rx="15" ry="15" fill="lightgrey" x="100" y="50" class="Dialog" />
+  
+  <g onclick="document.getElementById('MainMenu-Disclaimer').style.display = 'none';" class="button">
+    <rect fill="black" x="120" y="70" width="300" height="80" />
+    <text fill="white" alignment-baseline="middle" text-anchor="middle" x="270" y="110" style="font-size: 48px;">Back</text>
+  </g>
+
+  <text x="800" y="120" alignment-baseline="middle" text-anchor="middle" style="font-size: 72px;">Disclaimer</text>
+
+  <foreignObject x="150" y="180" width="1300" height="500" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div style="font-size: 36px; overflow-y: scroll; max-height: 500px;" xmlns="http://www.w3.org/1999/xhtml">
+      "Countryball is a user-generated Internet meme. The meme is manifested in a large number of online comics, where countries are personified as (typically) spherical personas decorated with their country's flag, interacting in often broken English. The characters poke fun at national stereotypes and international relations, as well as historical conflicts."
+      <br><br>~ Adapated from Wikipedia
+
+      <br><br>Countryball Institution is basically a video game involving Countryballs interacting in a school environment, whilst portraying national sterotypes, international relations and historical conflicts. No offense should be taken at any content portrayed in Countryball Institution. Content portrayed in Countryball Institution is solely for the enjoyment of players.
+      <br><br>Any resemblance to real-life persons is completely coincidental and unintentional.
+    </div>
+  </foreignObject>
 </g>
