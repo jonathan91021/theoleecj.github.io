@@ -58,7 +58,7 @@ function LoadComputerAsSetter() {
 //Show user what colour they have selected to place
 function AttachColourToCursor(colour) {
   colourSelected = colour;
-  document.body.style.cursor = "url(" + colour + ".png)";
+  document.getElementsByTagName("body")[0].style.cursor = "url(" + colour + ".png)";
 }
 
 //Place default blank pieces onto board
