@@ -14,6 +14,8 @@ while (compsResultsPopulated < 12) {
   compsResults["row" + compsResultsPopulated] = ["none", "none", "none", "none"];
 }
 
+var colourSelected = "none";
+
 //Numbers to colours
 function NumberToColour(number) {
   switch (number) {
@@ -51,6 +53,12 @@ function StartAsGuesser() {
 function LoadComputerAsSetter() {
   compSeries = [NumberToColour(Math.floor((Math.random() * 6))), NumberToColour(Math.floor((Math.random() * 6))), NumberToColour(Math.floor((Math.random() * 6))), NumberToColour(Math.floor((Math.random() * 6)))];
   console.log("Random series generated. Random series is " + compSeries);
+}
+
+//Show user what colour they have selected to place
+function AttachColourToCursor(colour) {
+  colourSelected = colour;
+  document.body.style.cursor = "url(" + colour + ".png)";
 }
 
 //Place default blank pieces onto board
