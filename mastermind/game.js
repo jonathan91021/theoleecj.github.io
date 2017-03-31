@@ -69,16 +69,16 @@ function LoadDefaultPieces() {
     rowsRendered++;
     
     //Generate 4 blank spaces for placement
-    var blankSpaces = "<circle cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='700' fill='lightgrey' />";
+    var blankSpaces = "<circle data-position='" + rowsRendered + ",1' cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='700' fill='lightgrey' onclick='PlacePiece(this);' />";
     document.getElementById("Board-GuessPieces").innerHTML = document.getElementById("Board-GuessPieces").innerHTML + blankSpaces;
     
-    blankSpaces = "<circle cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='620' fill='lightgrey' />";
+    blankSpaces = "<circle data-position='" + rowsRendered + ",2' cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='620' fill='lightgrey' onclick='PlacePiece(this);' />";
     document.getElementById("Board-GuessPieces").innerHTML = document.getElementById("Board-GuessPieces").innerHTML + blankSpaces;
     
-    blankSpaces = "<circle cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='540' fill='lightgrey' />";
+    blankSpaces = "<circle data-position='" + rowsRendered + ",3' cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='540' fill='lightgrey' onclick='PlacePiece(this);' />";
     document.getElementById("Board-GuessPieces").innerHTML = document.getElementById("Board-GuessPieces").innerHTML + blankSpaces;
     
-    blankSpaces = "<circle cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='460' fill='lightgrey' />";
+    blankSpaces = "<circle data-position='" + rowsRendered + ",4' cx='" + (100 + (rowsRendered * 100)) + "' r='20' cy='460' fill='lightgrey' onclick='PlacePiece(this);' />";
     document.getElementById("Board-GuessPieces").innerHTML = document.getElementById("Board-GuessPieces").innerHTML + blankSpaces;
     
     //Generate spaces for computer to tell user result of their guess
