@@ -58,7 +58,7 @@ function LoadComputerAsSetter() {
 //Show user what colour they have selected to place
 function AttachColourToCursor(colour) {
   colourSelected = colour;
-  document.getElementById("VideoGame").setAttribute("style", "cursor: url('" + colour + ".ico')");
+  document.getElementById("VideoGame").setAttribute("style", "cursor: url('" + colour + ".ico'), default");
 }
 
 //Place default blank pieces onto board
