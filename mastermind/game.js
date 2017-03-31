@@ -15,6 +15,7 @@ while (compsResultsPopulated < 12) {
 }
 
 var colourSelected = "none";
+var piecesPlacedInThisRow = 0;
 
 //Numbers to colours
 function NumberToColour(number) {
@@ -38,6 +39,21 @@ function NumberToColour(number) {
       return "purple";
       break;
   }
+}
+
+//Place piece
+function PlacePiece(pieceToChange) {
+  if (colourSelected != "none") {
+    if (pieceToChange.getAttribute("fill") != "lightgrey") { /*No need to add to colours selected for row*/ }
+    else { piecesPlacedInThisRow++; }
+    
+    pieceToChange.setAttribute("fill", colourSelected);
+    
+    if (piecesPlacedInThisRow == 4) {
+      EvalGuess(1); //Make computer mark guess
+    }
+  }
+  else { /*No need to do stuff*/ }
 }
 
 //Start game as guesser
