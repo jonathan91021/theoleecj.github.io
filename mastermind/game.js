@@ -65,6 +65,7 @@ function EvalGuess() {
   var piecesChecked = 1;
   
   while (piecesChecked < 5) {
+    console.log(compSeries[piecesChecked - 1] + " and " + document.getElementById(currentColumn + "," + piecesChecked).getAttribute("data-colour"));
     if (compSeries[piecesChecked - 1] == document.getElementById(currentColumn + "," + piecesChecked).getAttribute("data-colour")) {
       console.log("It's a match.");
     }
