@@ -63,6 +63,7 @@ function PlacePiece(pieceToChange) {
 //Evaluate guess
 function EvalGuess() {
   var piecesChecked = 1, thisColumn = 0;
+  piecesPlacedInThisRow = 0;
   document.getElementById("EvaluateButton").style.display = "none";
   
   while (piecesChecked < 5) {
@@ -76,7 +77,8 @@ function EvalGuess() {
     }
     else {
       thisColumn = 0;
-      document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");    }
+      document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");
+    }
     
     piecesChecked++;
   }
