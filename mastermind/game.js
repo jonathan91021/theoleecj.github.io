@@ -68,7 +68,7 @@ function EvalGuess() {
   while (piecesChecked < 5) {
     if (compSeries[piecesChecked - 1] == document.getElementById(currentColumn + "," + piecesChecked).getAttribute("data-colour")) {
       thisColumn++;
-       document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "red");
+      document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "red");
       
       if (thisColumn == 4) {
         document.getElementById("GameStatus").innerHTML = "You win!";
