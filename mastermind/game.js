@@ -28,7 +28,7 @@ function NumberToColour(number) {
       return "green";
       break;
     case 2:
-      return "#2196f3";
+      return "lightblue";
       break;
     case 3:
       return "yellow";
@@ -44,7 +44,6 @@ function NumberToColour(number) {
 
 //Place piece
 function PlacePiece(pieceToChange) {
-  alert(pieceToChange.getAttribute("id").split(",")[0]);
   if (pieceToChange.getAttribute("id").split(",")[0] == currentColumn) {
     if (colourSelected != "none") {
       if (pieceToChange.getAttribute("fill") != "lightgrey") { /*No need to add to colours selected for row*/ }
@@ -53,12 +52,27 @@ function PlacePiece(pieceToChange) {
       pieceToChange.setAttribute("fill", colourSelected);
 
       if (piecesPlacedInThisRow == 4) {
-        currentColumn++;
-        EvalGuess(1); //Make computer mark guess
+        document.getElementById("EvaluateButton").style.display = "block";
       }
     }
     else { /*No need to do stuff*/ }
   }
+}
+
+//Evaluate guess
+function EvalGuess() {
+  var piecesChecked = 1;
+  
+  while (piecesChecked < 5) {
+    if (compSeries[piecesChecked - 1] == document.getElementById(currentColumn + "," + piecesChecked).getAttribute("fill")) {
+      console.log("It's a match.");
+    }
+    else {
+      console.log("No match.");
+    }
+  }
+  
+  currentColumn++;
 }
 
 //Start game as guesser
