@@ -44,7 +44,7 @@ function NumberToColour(number) {
 
 //Place piece
 function PlacePiece(pieceToChange) {
-  if (pieceToChange.getAttribute("id") == ) {
+  if (pieceToChange.getAttribute("id") == "") {
     if (colourSelected != "none") {
       if (pieceToChange.getAttribute("fill") != "lightgrey") { /*No need to add to colours selected for row*/ }
       else { piecesPlacedInThisRow++; }
