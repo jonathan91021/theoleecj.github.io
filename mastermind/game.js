@@ -132,7 +132,7 @@ function LoadDefaultPieces() {
     blankSpaces = "<circle id='Mark-" + rowsRendered + ",2' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='340' fill='lightgrey' />";
     document.getElementById("Board-ComputerMarkingPieces").innerHTML = document.getElementById("Board-ComputerMarkingPieces").innerHTML + blankSpaces;
     
-    blankSpaces = "<circle id='Mark-" + rowsRendered + ",3' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='380' fill='lightgrey' />";
+    blankSpaces = "<circle id='Mark-" + rowsRendered + ",3' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='280' fill='lightgrey' />";
     document.getElementById("Board-ComputerMarkingPieces").innerHTML = document.getElementById("Board-ComputerMarkingPieces").innerHTML + blankSpaces;
     
     blankSpaces = "<circle id='Mark-" + rowsRendered + ",4' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='220' fill='lightgrey' />";
