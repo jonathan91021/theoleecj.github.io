@@ -1,5 +1,5 @@
 //Store computer's randomly generated series
-var compSeries = ["lightgrey", "lightgrey", "lightgrey", "lightgrey"];
+var compSeries = ["10", "10", "10", "10"];
 
 //Store results that computer returned for user's guess
 var compsResults = {
@@ -21,23 +21,23 @@ var currentColumn = 1;
 //Numbers to colours
 function NumberToColour(number) {
   switch (number) {
-    case 0:
-      return "red";
+    case "red":
+      return 0;
       break;
-    case 1:
-      return "green";
+    case "green":
+      return 1;
       break;
-    case 2:
-      return "lightblue";
+    case "lightblue":
+      return 2;
       break;
-    case 3:
-      return "yellow";
+    case "yellow":
+      return 3;
       break;
-    case 4:
-      return "white";
+    case "white":
+      return 4;
       break;
-    case 5:
-      return "purple";
+    case "purple":
+      return 5;
       break;
   }
 }
@@ -50,6 +50,7 @@ function PlacePiece(pieceToChange) {
       else { piecesPlacedInThisRow++; }
 
       pieceToChange.setAttribute("fill", colourSelected);
+      pieceToChange.setAttribute("data-colour", NumberToColour(colourSelected));
 
       if (piecesPlacedInThisRow == 4) {
         document.getElementById("EvaluateButton").style.display = "block";
@@ -88,7 +89,7 @@ function StartAsGuesser() {
 
 //Set computer's guesses
 function LoadComputerAsSetter() {
-  compSeries = [NumberToColour(Math.floor((Math.random() * 6))), NumberToColour(Math.floor((Math.random() * 6))), NumberToColour(Math.floor((Math.random() * 6))), NumberToColour(Math.floor((Math.random() * 6)))];
+  compSeries = [Math.floor((Math.random() * 6)), Math.floor((Math.random() * 6)), Math.floor((Math.random() * 6)), Math.floor((Math.random() * 6))];
   console.log("Random series generated. Random series is " + compSeries);
 }
 
