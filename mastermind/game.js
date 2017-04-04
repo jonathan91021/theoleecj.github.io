@@ -70,12 +70,12 @@ function EvalGuess() {
       thisColumn++;
       if (thisColumn == 4) {
         document.getElementById("GameStatus").innerHTML = "You win!";
-        document.getElementById(currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");
+        document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "red");
       }
     }
     else {
       thisColumn = 0;
-      document.getElementById(currentColumn + "," + piecesChecked).setAttribute("fill", "red");
+      document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");
     }
     
     piecesChecked++;
