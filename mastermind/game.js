@@ -16,7 +16,7 @@ while (compsResultsPopulated < 12) {
 
 var colourSelected = "none";
 var piecesPlacedInThisRow = 0;
-var currentRow = 1, currentColumn = 1;
+var currentColumn = 1;
 
 //Numbers to colours
 function NumberToColour(number) {
@@ -44,7 +44,7 @@ function NumberToColour(number) {
 
 //Place piece
 function PlacePiece(pieceToChange) {
-  if (pieceToChange.getAttribute("id") == "") {
+  if (pieceToChange.getAttribute("id").split(",")[0] == currentColumn) {
     if (colourSelected != "none") {
       if (pieceToChange.getAttribute("fill") != "lightgrey") { /*No need to add to colours selected for row*/ }
       else { piecesPlacedInThisRow++; }
@@ -52,6 +52,7 @@ function PlacePiece(pieceToChange) {
       pieceToChange.setAttribute("fill", colourSelected);
 
       if (piecesPlacedInThisRow == 4) {
+        currentColumn++;
         EvalGuess(1); //Make computer mark guess
       }
     }
