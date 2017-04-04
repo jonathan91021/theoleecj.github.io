@@ -18,11 +18,6 @@ var colourSelected = "none";
 var piecesPlacedInThisRow = 0;
 var currentColumn = 1;
 
-//Display computer's marking results
-function DispResults() {
-  
-}
-
 //Numbers to colours
 function NumberToColour(number) {
   switch (number) {
@@ -67,15 +62,20 @@ function PlacePiece(pieceToChange) {
 
 //Evaluate guess
 function EvalGuess() {
-  var piecesChecked = 1;
+  var piecesChecked = 1, thisColumn = 0;
   document.getElementById("EvaluateButton").style.display = "none";
   
   while (piecesChecked < 5) {
     if (compSeries[piecesChecked - 1] == document.getElementById(currentColumn + "," + piecesChecked).getAttribute("data-colour")) {
-      console.log("It's a match.");
+      thisColumn++;
+      if (thisColumn == 4) {
+        document.getElementById("GameStatus").innerHTML = "You win!";
+        document.getElementById(currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");
+      }
     }
     else {
-      console.log("No match.");
+      thisColumn = 0;
+      document.getElementById(currentColumn + "," + piecesChecked).setAttribute("fill", "red");
     }
     
     piecesChecked++;
@@ -126,16 +126,16 @@ function LoadDefaultPieces() {
     document.getElementById("Board-GuessPieces").innerHTML = document.getElementById("Board-GuessPieces").innerHTML + blankSpaces;
     
     //Generate spaces for computer to tell user result of their guess
-    blankSpaces = "<circle id='Mark-" + rowsRendered + ",1' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='420' fill='lightgrey' />";
+    blankSpaces = "<circle id='Mark-" + rowsRendered + ",1' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='400' fill='lightgrey' />";
     document.getElementById("Board-ComputerMarkingPieces").innerHTML = document.getElementById("Board-ComputerMarkingPieces").innerHTML + blankSpaces;
     
-    blankSpaces = "<circle id='Mark-" + rowsRendered + ",2' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='360' fill='lightgrey' />";
+    blankSpaces = "<circle id='Mark-" + rowsRendered + ",2' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='340' fill='lightgrey' />";
     document.getElementById("Board-ComputerMarkingPieces").innerHTML = document.getElementById("Board-ComputerMarkingPieces").innerHTML + blankSpaces;
     
-    blankSpaces = "<circle id='Mark-" + rowsRendered + ",3' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='300' fill='lightgrey' />";
+    blankSpaces = "<circle id='Mark-" + rowsRendered + ",3' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='380' fill='lightgrey' />";
     document.getElementById("Board-ComputerMarkingPieces").innerHTML = document.getElementById("Board-ComputerMarkingPieces").innerHTML + blankSpaces;
     
-    blankSpaces = "<circle id='Mark-" + rowsRendered + ",4' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='240' fill='lightgrey' />";
+    blankSpaces = "<circle id='Mark-" + rowsRendered + ",4' cx='" + (100 + (rowsRendered * 100)) + "' r='15' cy='220' fill='lightgrey' />";
     document.getElementById("Board-ComputerMarkingPieces").innerHTML = document.getElementById("Board-ComputerMarkingPieces").innerHTML + blankSpaces;
   }
 }
