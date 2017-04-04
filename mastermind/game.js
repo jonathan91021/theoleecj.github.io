@@ -70,6 +70,8 @@ function EvalGuess() {
     else {
       console.log("No match.");
     }
+    
+    piecesChecked++;
   }
   
   currentColumn++;
