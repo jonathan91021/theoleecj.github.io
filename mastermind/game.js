@@ -3,7 +3,7 @@ var compSeries = ["10", "10", "10", "10"];
 
 //Store results that computer returned for user's guess
 var compsResults = {
-  row1: ["none", "none", "none", "none"]
+  row1: ["10", "10", "10", "10"]
 };
 
 //Populate results object + array
@@ -11,7 +11,7 @@ var compsResultsPopulated = 0;
 
 while (compsResultsPopulated < 12) {
   compsResultsPopulated++;
-  compsResults["row" + compsResultsPopulated] = ["none", "none", "none", "none"];
+  compsResults["row" + compsResultsPopulated] = ["10", "10", "10", "10"];
 }
 
 var colourSelected = "none";
@@ -51,6 +51,8 @@ function PlacePiece(pieceToChange) {
 
       pieceToChange.setAttribute("fill", colourSelected);
       pieceToChange.setAttribute("data-colour", NumberToColour(colourSelected));
+      
+      compsResults["row" + currentColumn][pieceToChange.getAttribute("id").split(",")[1]] = colourSelected;
 
       if (piecesPlacedInThisRow == 4) {
         document.getElementById("EvaluateButton").style.display = "block";
