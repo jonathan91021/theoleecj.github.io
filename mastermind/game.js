@@ -88,7 +88,7 @@ function EvalGuess() {
   
   //White and red
   while (piecesChecked < 5) {
-    if (compSeries[piecesChecked - 1] == compResults["row" + currentColumn][piecesChecked]) {
+    if (compSeries[piecesChecked - 1] == compsResults["row" + currentColumn][piecesChecked]) {
       thisColumn++;
       document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "red");
       
@@ -108,11 +108,11 @@ function EvalGuess() {
   
   //Yellow
   while (piecesChecked < 5) {
-    var colourOfCurrentPiece = compResults["row" + currentColumn][piecesChecked];
+    var colourOfCurrentPiece = compsResults["row" + currentColumn][piecesChecked];
     var coloursCheckedAgainst = 1;
     
     while (coloursCheckedAgainst < 5) {
-      if (colourOfCurrentPiece == compSeries[coloursCheckedAgainst]) {
+      if (colourOfCurrentPiece == compsSeries[coloursCheckedAgainst]) {
         document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");
         coloursCheckedAgainst = 5;
       }
