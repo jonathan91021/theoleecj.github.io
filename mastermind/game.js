@@ -22,7 +22,7 @@ var currentColumn = 1;
 function NumberToColour(number) {
   switch (number) {
     case "red":
-      return "0';
+      return "0";
       break;
     case "green":
       return "1";
