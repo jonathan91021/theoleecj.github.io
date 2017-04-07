@@ -109,6 +109,8 @@ function EvalGuess() {
         coloursCheckedAgainst++;
       }
     }
+    
+    piecesChecked++;
   }
   
   document.getElementById("EvaluateButton").style.display = "none";
