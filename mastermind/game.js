@@ -22,22 +22,22 @@ var currentColumn = 1;
 function NumberToColour(number) {
   switch (number) {
     case "red":
-      return 0;
+      return "0';
       break;
     case "green":
-      return 1;
+      return "1";
       break;
     case "lightblue":
-      return 2;
+      return "2";
       break;
     case "yellow":
-      return 3;
+      return "3";
       break;
     case "white":
-      return 4;
+      return "4";
       break;
     case "purple":
-      return 5;
+      return "5";
       break;
   }
 }
