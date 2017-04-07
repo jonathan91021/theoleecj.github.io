@@ -114,7 +114,6 @@ function EvalGuess() {
     while (coloursCheckedAgainst < 5) {
       if (colourOfCurrentPiece == compSeries[coloursCheckedAgainst]) {
         document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");
-        coloursCheckedAgainst = 5;
       }
       else { /*Continue*/ }
       
