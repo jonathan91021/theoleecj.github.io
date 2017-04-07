@@ -63,13 +63,32 @@ function PlacePiece(pieceToChange) {
 }
 
 //Evaluate guess
+/*
+This is the eighth time in memory I have used psuedocode -_-
+
+White - colour wrong, position wrong
+Yellow - colour right, position wrong
+Red - both right
+
+Make variables for number of colour correct and number of both correct
+
+FOR WHITE
+No checking needed
+
+FOR YELLOW
+For each colour, check it against the other colours
+
+FOR RED
+Easy lah. -_-
+*/
 function EvalGuess() {
   var piecesChecked = 1, thisColumn = 0;
   piecesPlacedInThisRow = 0;
   document.getElementById("EvaluateButton").style.display = "none";
   
+  //White and red
   while (piecesChecked < 5) {
-    if (compSeries[piecesChecked - 1] == document.getElementById(currentColumn + "," + piecesChecked).getAttribute("data-colour")) {
+    if (compSeries[piecesChecked - 1] == compResults["row" + currentColumn][piecesChecked]) {
       thisColumn++;
       document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "red");
       
@@ -79,7 +98,27 @@ function EvalGuess() {
     }
     else {
       thisColumn = 0;
-      document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");
+      document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "white");
+    }
+    
+    piecesChecked++;
+  }
+  
+  piecesChecked = 1;
+  
+  //Yellow
+  while (piecesChecked < 5) {
+    var colourOfCurrentPiece = compResults["row" + currentColumn][piecesChecked];
+    var coloursCheckedAgainst = 1;
+    
+    while (coloursCheckedAgainst < 5) {
+      if (colourOfCurrentPiece == compSeries[coloursCheckedAgainst]) {
+        document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");
+        coloursCheckedAgainst = 5;
+      }
+      else { /*Continue*/ }
+      
+      coloursCheckedAgainst++;
     }
     
     piecesChecked++;
