@@ -86,7 +86,7 @@ function EvalGuess() {
   var piecesChecked = 1;
   var markingPiecesFilled = 1;
   
-  while (piecesChecked < 0) {
+  while (piecesChecked < 5) {
     //Check for correct colour + position
     if (compSeries[piecesChecked] == compsResults["row" + currentColumn][piecesChecked]) {
       document.getElementById("Mark-" + currentColumn + "," + markingPiecesFilled).setAttribute("fill", "red");
