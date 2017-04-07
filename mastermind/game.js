@@ -90,6 +90,10 @@ function EvalGuess() {
     //Check for correct colour + position
     if (compSeries[piecesChecked] == compsResults["row" + currentColumn][piecesChecked]) {
       document.getElementById("Mark-" + currentColumn + "," + markingPiecesFilled).setAttribute("fill", "red");
+      correctColour++;
+      
+      if (correctColour == 4) { document.getElementById("GameStatus").innerHTML = "You win!"; }
+      
       markingPiecesFilled++;
     }
     else {
@@ -106,6 +110,9 @@ function EvalGuess() {
       }
     }
   }
+  
+  document.getElementById("EvaluateButton").style.display = "none";
+  currentColumn++;
 }
 
 //Start game as guesser
