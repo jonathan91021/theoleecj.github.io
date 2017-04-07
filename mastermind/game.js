@@ -1,9 +1,9 @@
 //Store computer's randomly generated series
-var compSeries = ["10", "10", "10", "10"];
+var compSeries = [0, "10", "10", "10", "10"];
 
 //Store results that computer returned for user's guess
 var compsResults = {
-  row1: ["10", "10", "10", "10"]
+  row1: [0, "10", "10", "10", "10"]
 };
 
 //Populate results object + array
@@ -11,7 +11,7 @@ var compsResultsPopulated = 0;
 
 while (compsResultsPopulated < 12) {
   compsResultsPopulated++;
-  compsResults["row" + compsResultsPopulated] = ["10", "10", "10", "10"];
+  compsResults["row" + compsResultsPopulated] = [0, "10", "10", "10", "10"];
 }
 
 var colourSelected = "none";
@@ -73,7 +73,7 @@ Red - both right
 Make variables for number of colour correct and number of both correct
 
 FOR WHITE
-No checking needed
+No checking needed. Leave blank as needed.
 
 FOR YELLOW
 For each colour, check it against the other colours
@@ -82,48 +82,30 @@ FOR RED
 Easy lah. -_-
 */
 function EvalGuess() {
-  var piecesChecked = 1, thisColumn = 0;
-  piecesPlacedInThisRow = 0;
-  document.getElementById("EvaluateButton").style.display = "none";
+  var correctColour = 0, correctPos = 0;
+  var piecesChecked = 1;
+  var markingPiecesFilled = 1;
   
-  //White and red
-  while (piecesChecked < 5) {
-    if (compSeries[piecesChecked - 1] == compsResults["row" + currentColumn][piecesChecked]) {
-      thisColumn++;
-      document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "red");
-      
-      if (thisColumn == 4) {
-        document.getElementById("GameStatus").innerHTML = "You win!";
-      }
+  while (piecesChecked < 0) {
+    //Check for correct colour + position
+    if (compSeries[piecesChecked] == compsResults["row" + currentColumn][piecesChecked]) {
+      document.getElementById("Mark-" + currentColumn + "," + markingPiecesFilled).setAttribute("fill", "red");
+      markingPiecesFilled++;
     }
     else {
-      thisColumn = 0;
-      document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "white");
-    }
+      //Check for correct colour
+      var coloursCheckedAgainst = 1;
     
-    piecesChecked++;
-  }
-  
-  piecesChecked = 1;
-  
-  //Yellow
-  while (piecesChecked < 5) {
-    var colourOfCurrentPiece = compsResults["row" + currentColumn][piecesChecked];
-    var coloursCheckedAgainst = 1;
-    
-    while (coloursCheckedAgainst < 5) {
-      if (colourOfCurrentPiece == compSeries[coloursCheckedAgainst]) {
-        document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");
+      while (coloursCheckedAgainst < 5) {
+        if (compSeries[coloursCheckedAgainst] == compsResults["row" + currentColumn][piecesChecked]) {
+          document.getElementById("Mark-" + currentColumn + "," + markingPiecesFilled).setAttribute("fill", "yellow");
+        }
+        else { /*Nothing*/ }
+        
+        coloursCheckedAgainst++;
       }
-      else { /*Continue*/ }
-      
-      coloursCheckedAgainst++;
     }
-    
-    piecesChecked++;
   }
-  
-  currentColumn++;
 }
 
 //Start game as guesser
@@ -137,7 +119,7 @@ function StartAsGuesser() {
 
 //Set computer's guesses
 function LoadComputerAsSetter() {
-  compSeries = [Math.floor((Math.random() * 6)), Math.floor((Math.random() * 6)), Math.floor((Math.random() * 6)), Math.floor((Math.random() * 6))];
+  compSeries = [0, Math.floor((Math.random() * 6)), Math.floor((Math.random() * 6)), Math.floor((Math.random() * 6)), Math.floor((Math.random() * 6))];
   console.log("Random series generated. Random series is " + compSeries);
 }
 
