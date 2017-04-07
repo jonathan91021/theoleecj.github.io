@@ -52,7 +52,7 @@ function PlacePiece(pieceToChange) {
       pieceToChange.setAttribute("fill", colourSelected);
       pieceToChange.setAttribute("data-colour", NumberToColour(colourSelected));
       
-      compsResults["row" + currentColumn][parseInt(pieceToChange.getAttribute("id").split(",")[1]) + 1] = NumberToColour(colourSelected);
+      compsResults["row" + currentColumn][parseInt(pieceToChange.getAttribute("id").split(",")[1])] = NumberToColour(colourSelected);
 
       if (piecesPlacedInThisRow == 4) {
         document.getElementById("EvaluateButton").style.display = "block";
