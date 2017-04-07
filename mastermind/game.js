@@ -113,10 +113,10 @@ function EvalGuess() {
     }
     
     piecesChecked++;
-    piecesPlacedInThisRow = 0;
   }
   
   document.getElementById("EvaluateButton").style.display = "none";
+  piecesPlacedInThisRow = 0;
   currentColumn++;
 }
 
