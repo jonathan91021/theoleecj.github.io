@@ -112,7 +112,7 @@ function EvalGuess() {
     var coloursCheckedAgainst = 1;
     
     while (coloursCheckedAgainst < 5) {
-      if (colourOfCurrentPiece == compsSeries[coloursCheckedAgainst]) {
+      if (colourOfCurrentPiece == compSeries[coloursCheckedAgainst]) {
         document.getElementById("Mark-" + currentColumn + "," + piecesChecked).setAttribute("fill", "yellow");
         coloursCheckedAgainst = 5;
       }
