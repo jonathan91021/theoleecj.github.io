@@ -97,6 +97,8 @@ function EvalGuess() {
       markingPiecesFilled++;
     }
     else {
+      console.log("Checking for colours.");
+      
       //Check for correct colour
       var coloursCheckedAgainst = 1;
     
