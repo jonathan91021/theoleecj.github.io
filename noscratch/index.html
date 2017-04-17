@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html>
 
+  <head>
+    <title>NoScratch</title>
+    
+    <script>
+      var scene = null;
+      var shadowGenerator = null;
+    </script>
+
+    <style>
+      #Tooltip:hover {
+        display: block;
+      }
+    </style>
+
+    <script src="game.js"></script>
+    <script src="utilities.js"></script>
+    <script src="/hand.js"></script>
+    <script src="/babylon.2.4.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body onload="Start();" style="cursor: default; font-family: 'Segoe UI';" onresize="ResizeCanvas();">
+    <!--Game Intro-->
+    <div id="Start" style="z-index: 4; position: fixed; width: 100%; height: 100%; left: 0; top: 0;">
+      <img src="textures/dont-mess.jpeg" style="width: 100%; height: 100%;" />
+      <div onclick="StartGame();" style="cursor: pointer; position: absolute; top: 50%; left: calc(50% - 250px); color: white; width: 500px; background-color: black; opacity: 0.9; border-radius: 30px; padding: 40px;">
+        AS <strike>PUN</strike><b>FUN</b>-ISHMENT FOR MESSING WITH A CERTAIN TEACHER
+        <br>YOU NOW HAVE TO DESTROY THE SCRATCH SERVERS.
+        <br><br>Click here to begin... Remember, 1 punch knocks out 7 servers.
+        <br>Go on, be the One Punch Man to servers!
+      </div>
+    </div>
+
+    <!--2D overlays-->
+    <div id="MascotsLeft" style="text-align: center; opacity: 0.9; padding-top: 10px; position: absolute; bottom: 0; right: 0; z-index: 3; color: white; background-color: black;">
+      ELIMINATE ALL 3 MASCOTS TO WIN!
+      <br><br>
+      <img alt="ELIMINATED!" src="textures/cat-OK.png" id="MascotsLeft-Cat" />
+      <img alt="ELIMINATED!" src="textures/tera-OK.png" id="MascotsLeft-Tera" />
+      <img alt="ELIMINATED!" src="textures/gobo-OK.png" id="MascotsLeft-Gobo" />
+    </div>
+
+    <!--3D-->
+    <canvas onmousemove="tooltipsService.checkTooltips(event, scene.pick(scene.pointerX, scene.pointerY));" onclick="clicksService.checkClicks(event, scene.pick(scene.pointerX, scene.pointerY));" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%;" id="Canvas"></canvas>
+    <div id="Tooltip" style="position: fixed; z-index: 3; background-color: black; opacity: 0.9; color: white; padding: 5px; display: none;"></div>
+  </body>
+
+</html>
