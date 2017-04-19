@@ -1,0 +1,85 @@
+<!--Background-->
+<rect fill="black" width="1600" height="900" x="0" y="0" />
+
+<!--All of the different backgrounds for storey 1-->
+<!--
+Storey 1
++-------+       +-------+-------+-------+-------+-------+-------+-------+-------+
+|       |       | Gents |Ladies |       |       |       |       |       |       |
+|Comp-1 |       | Room  | Room  |  1-1  |  1-2  |  1-3  |  1-4  |  1-5  |  1-6  |
+|       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|   Corridor-1  |   Corridor-2  |   Corridor-3  |   Corridor-4  |   Corridor-5  |   Corridor-6  |   Corridor-7  | -> Once player walks beyond here they go to the boarding school, where they live
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|       |       |                               |                               |
+|Comp-2 |Stairs |                               |                               |
+|       |       |                               |                               |
++-------+-------+                               |          Canteen              |
+                                                |                               |
+                                                |                               |
+                                                |                               |
+                                                +-------+-------+-------+-------+
+
+Various Countryballs would be randomly located in all rooms. The player can interact with them.
+Each in-game day is such that 1 game-minute = 1 real second
+-->
+
+<!--Corridors-->
+<g id="Storey1-Corridor1">
+  <image xlink:href="scenes/storey1/corridor-1.png" />
+
+  <polygon points="288,139 287,597 0,720, 0,0" fill="transparent" onclick="AreaOutOfBounds_Storey1();" />
+  <polygon class="button" points="100,380 140,350 140,370 180,370 180,390 140,390 140,410" fill="black" onclick="AreaOutOfBounds_Storey1();" />
+
+  <polygon class="button" points="1560,380 1530,350 1530,370 1490,370 1490,390 1530,390 1530,410" fill="black" onclick="SwitchBackdrop_Storey1('Corridor2');" />
+
+  <polygon points="390,200 601,200 601,592 390,592" fill="transparent" onclick="SwitchScene_Storey1('Comp1');" />
+  <polygon class="button" points="480,420 510,460 490,460 490,500 470,500 470,460 450,460" fill="black" onclick="SwitchScene_Storey1('Comp1');" />
+</g>
+
+<g id="Storey1-Corridor2" style="display: none;">
+  <image xlink:href="scenes/storey1/corridor-2.png" />
+
+  <polygon points="288,139 287,597 0,720, 0,0" fill="transparent" onclick="AreaOutOfBounds_Storey1();" />
+  <polygon class="button" points="100,380 140,350 140,370 180,370 180,390 140,390 140,410" fill="black" onclick="AreaOutOfBounds_Storey1();" />
+
+  <polygon points="390,200 601,200 601,592 390,592" fill="transparent" onclick="SwitchScene_Storey1('Comp1');" />
+  <polygon class="button" points="480,420 510,460 490,460 490,500 470,500 470,460 450,460" fill="black" onclick="SwitchScene_Storey1('Comp1');" />
+</g>
+
+<!--Character(s)-->
+<image src="sprites/countryballs/korea/korea.png" x="767" y="381" />
+
+<!--Bottom Bar-->
+<rect x="0" y="700" width="1600" height="200" fill="lightgray" />
+
+<!--Left-->
+<text x="10" y="730" style="font-size: 26px;" id="Storey1-Time">
+  <tspan id="Storey1-Time-Time">7.00 AM</tspan>
+  <tspan id="Storey1-Time-Description"> - Before School</tspan>
+</text>
+<text x="10" y="760" style="font-size: 26px;" id="Storey1-Location">Storey 1 - Corridor</text>
+<text x="10" y="790" style="font-size: 26px;" id="Storey1-Status">Free Time</text>
+
+<text x="10" y="850" style="font-size: 30px;" class="button">Load Game</text>
+<text x="310" y="850" style="font-size: 30px;" class="button">Quit Game</text>
+
+<rect width="1000" height="160" x="550" y="720" fill="black" />
+
+<!--Inventory-->
+<g id="Storey1-Inventory">
+  <text alignment-baseline="middle" fill="white" text-anchor="middle" style="font-size: 30px;" x="1050" y="750">INVENTORY</text>
+</g>
+
+<!--Interaction-->
+<g id="Storey1-Interact" style="display: none;">
+  <text alignment-baseline="middle" fill="white" text-anchor="middle" style="font-size: 30px;" x="1050" y="750">
+    INTERACT -&nbsp;
+    <tspan id="Storey1-Interact-Ball">Polandball</tspan>
+  </text>
+
+  <text class="button" id="Storey1-Interact-1" alignment-baseline="left" fill="white" text-anchor="left" style="font-size: 30px;" x="580" y="800">Fight</text>
+  <text class="button" id="Storey1-Interact-2" alignment-baseline="left" fill="white" text-anchor="left" style="font-size: 30px;" x="1080" y="800">Ask favour...</text>
+  <text class="button" id="Storey1-Interact-3" alignment-baseline="left" fill="white" text-anchor="left" style="font-size: 30px;" x="580" y="840">Talk to...</text>
+  <text class="button" id="Storey1-Interact-4" alignment-baseline="left" fill="white" text-anchor="left" style="font-size: 30px;" x="1080" y="840">Exit</text>
+</g>

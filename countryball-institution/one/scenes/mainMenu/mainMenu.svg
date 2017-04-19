@@ -20,9 +20,9 @@
   <text alignment-baseline="middle" text-anchor="middle" x="800" y="290" style="font-size: 48px;">New Game</text>
 </g>
 
-<g class="button" onclick="LoadGame();">
+<g class="button" id="MainMenu-LoadGame" onclick="LoadGame();">
   <rect fill="lightgray" width="600" height="80" x="500" y="350" />
-  <text alignment-baseline="middle" text-anchor="middle" x="800" y="390" style="font-size: 48px;">Continue Game</text>
+  <text id="MainMenu-LoadGame-Text" alignment-baseline="middle" text-anchor="middle" x="800" y="390" style="font-size: 48px;">Continue Game</text>
 </g>
 
 <g class="button" onclick="document.getElementById('MainMenu-Instructions').style.display = 'block';">
