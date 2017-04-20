@@ -48,7 +48,7 @@ Each in-game day is such that 1 game-minute = 1 real second
 </g>
 
 <!--Character(s)-->
-<image src="sprites/countryballs/korea/korea.png" x="767" y="381" />
+<image xlink:href="sprites/countryballs/korea/korea.png" x="767" y="381" />
 
 <!--Bottom Bar-->
 <rect x="0" y="700" width="1600" height="200" fill="lightgray" />
