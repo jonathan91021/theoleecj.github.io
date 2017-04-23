@@ -16,3 +16,8 @@ function SwitchScene_Storey1(sceneWanted) {
   HideScene("Game-Storey1");
   DisplayScene("Game-" + sceneWanted);
 }
+
+function SwitchBackdrop_Storey1(backdropWanted, backdropToThrow) {
+  document.getElementById("Storey1-" + backdropWanted).style.display = "block";
+  document.getElementById("Storey1-" + backdropToThrow).style.display = "none";
+}

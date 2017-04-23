@@ -31,7 +31,7 @@ Each in-game day is such that 1 game-minute = 1 real second
   <polygon points="288,139 287,597 0,720, 0,0" fill="transparent" onclick="AreaOutOfBounds_Storey1();" />
   <polygon class="button" points="100,380 140,350 140,370 180,370 180,390 140,390 140,410" fill="black" onclick="AreaOutOfBounds_Storey1();" />
 
-  <polygon class="button" points="1560,380 1530,350 1530,370 1490,370 1490,390 1530,390 1530,410" fill="black" onclick="SwitchBackdrop_Storey1('Corridor2');" />
+  <polygon class="button" points="1560,380 1530,350 1530,370 1490,370 1490,390 1530,390 1530,410" fill="black" onclick="SwitchBackdrop_Storey1('Corridor2', 'Corridor1');" />
 
   <polygon points="390,200 601,200 601,592 390,592" fill="transparent" onclick="SwitchScene_Storey1('Comp1');" />
   <polygon class="button" points="480,420 510,460 490,460 490,500 470,500 470,460 450,460" fill="black" onclick="SwitchScene_Storey1('Comp1');" />
@@ -40,14 +40,17 @@ Each in-game day is such that 1 game-minute = 1 real second
 <g id="Storey1-Corridor2" style="display: none;">
   <image xlink:href="scenes/storey1/corridor-2.png" />
 
-  <polygon points="288,139 287,597 0,720, 0,0" fill="transparent" onclick="AreaOutOfBounds_Storey1();" />
-  <polygon class="button" points="100,380 140,350 140,370 180,370 180,390 140,390 140,410" fill="black" onclick="AreaOutOfBounds_Storey1();" />
+  <polygon class="button" points="100,380 140,350 140,370 180,370 180,390 140,390 140,410" fill="black" onclick="SwitchBackdrop_Storey1('Corridor1', 'Corridor2');" />
 
-  <polygon points="390,200 601,200 601,592 390,592" fill="transparent" onclick="SwitchScene_Storey1('Comp1');" />
-  <polygon class="button" points="480,420 510,460 490,460 490,500 470,500 470,460 450,460" fill="black" onclick="SwitchScene_Storey1('Comp1');" />
+  <polygon class="button" points="420,420 450,460 430,460 430,500 410,500 410,460 390,460" fill="black" onclick="SwitchBackdrop_Storey1('Corridor3', 'Corridor2');" />
 </g>
 
 <!--Character(s)-->
+<image xlink:href="sprites/countryballs/poland/poland-walking.png" width="386" height="386" x="909" y="337" /> <!--Implement bouncing near end of development-->
+<image xlink:href="sprites/countryballs/russia/russia-walking.png" width="386" height="386" x="267" y="281" /> <!--Implement bouncing near end of development-->
+<image xlink:href="sprites/countryballs/china/china-walking.png" width="386" height="386" x="367" y="367" /> <!--Implement bouncing near end of development-->
+
+<!--Main character is always last to make them be closest to camera-->
 <image xlink:href="sprites/countryballs/korea/korea.png" x="767" y="381" />
 
 <!--Bottom Bar-->
